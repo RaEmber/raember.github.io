@@ -1,0 +1,246 @@
+@leftbarwidthmin: 50px;
+@leftbarwidthmax: 250px;
+@trianglewidth: 50px;
+@triangleofftop: 80px;
+
+@fontSegoeUI: "SegoeUI";
+@fontSegoeUILight: "SegoeUILight";
+@fontConsolas: "Consolas";
+
+@font-face {
+  font-family: @fontSegoeUI;
+  src: url("segoeui.ttf");
+}
+@font-face {
+  font-family: @fontSegoeUILight;
+  src: url("segoeuil.ttf");
+}
+@font-face {
+  font-family: @fontConsolas;
+  src: url("consola.ttf");
+}
+
+@keyframes title {
+  from {
+    margin-top: 60px;
+    margin-bottom: -140px;
+    background-color: @colBackground1;
+  }
+  to {
+    margin-top: 30px;
+    margin-bottom: -110px;
+    background-color: @colBackground2;
+  }
+}
+@keyframes triangle {
+  from {
+    margin-top: 20px+@trianglewidth;
+    border-top: 0px solid transparent;
+    border-bottom: 0px solid transparent;
+    border-left: 0px solid @colBar;
+  }
+  to {
+    margin-top: 20px;
+    border-top: @trianglewidth solid transparent;
+    border-bottom: @trianglewidth solid transparent;
+    border-left: @trianglewidth solid @colBar;
+  }
+}
+@keyframes article {
+  from {
+    margin-top: 160px;
+    opacity: 0;
+  }
+  to {
+    margin-top: 130px;
+    opacity: 100;
+  }
+}
+
+html, body {
+  background-color: @colBackground1;
+  color: @colFont;
+  font-family: @fontSegoeUI;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+
+nav{
+  &.leftbar {
+    width: @leftbarwidthmin;
+    height: 100%;
+    background-color: @colBar;
+    float: left;
+    -webkit-transition: width 1s;
+    &:hover {
+      width: @leftbarwidthmax;
+      ul {
+        margin-left: -@leftbarwidthmin;
+        opacity: 1;
+        visibility: visible;
+        color: @colFont;
+      }
+    }
+    ul {
+      position: fixed;
+      width: @leftbarwidthmax;
+      padding-top: 40px;
+      list-style-type: none;
+      opacity: 0;
+      margin-left: 40px-@leftbarwidthmax;
+      color: @colBar;
+      -webkit-transition: margin-left 1s, opacity 0.8s;
+      li{
+    		padding-left: 20px;
+    		&.topic {
+          margin-top: 1em;
+    		  color: @colBar;
+    		  background-color: @colBackground3;
+    		  margin-right: 60px;
+    		}
+    		a {
+            color: @colBackground1;
+            text-decoration: none;
+            &:hover {
+              color: @colBackground2;
+            }
+  	    }
+      }
+    }
+  }
+}
+
+
+div {
+  &.leftoffset {
+    width: @trianglewidth;
+    height: 100%;
+    float: left;
+  }
+  &.leftbox {
+    margin-top: 30px;
+    margin-bottom: -110px;
+    width: auto;
+    height: 80px;
+    background: @colBackground2;
+    animation-name: title;
+    animation-duration: 0.8s;
+    animation-delay: 0s;
+    animation-timing-function: ease-out;
+  }
+  &.triangle {
+    height: 0px;
+    margin-top:  20px;
+    border-top: @trianglewidth solid transparent;
+    border-bottom: @trianglewidth solid transparent;
+    border-left: @trianglewidth solid @colBar;
+    animation-name: triangle;
+    animation-duration: 0.8s;
+    animation-delay: 0s;
+    animation-timing-function: ease-out;
+  }
+}
+
+h1 {
+  float: left;
+  height: 80px;
+  margin-top: 30px;
+  margin-bottom: -110px;
+  background-color: @colBackground2;
+  font-size: 26pt;
+  font-family: @fontSegoeUI;
+  line-height: 75px;
+  padding-right: 60px;
+  animation-name: title;
+  animation-duration: 0.8s;
+  animation-delay: 0s;
+  animation-timing-function: ease-out;
+}
+
+article {
+  float: left;
+  margin-top: 130px;
+  width: 1000px;
+  height: auto;
+  animation-name: article;
+  animation-duration: 1.2s;
+  animation-delay: 0s;
+  animation-timing-function: ease-out;
+  ul {
+    list-style-type: none;
+    padding-left: 15px;
+    li {
+      padding-left: 1em;
+      text-indent: -1em;
+      &:before {
+        content: "\25A0";
+        padding-right: 5px;
+      }
+    }
+  }
+  ol {
+    padding-left: 34px;
+  }
+}
+
+blockquote {
+  width: auto;
+  display: block;
+  border-left: 8px solid @colBackground3;
+  background-color: @colBackground2;
+  padding-left: 42px;
+  position: relative;
+  min-height: 2em;
+  &::before{
+    content: "\201C";
+    font-size: 70px;
+    font-weight: bold;
+    color: @colFont2;
+    position: absolute;
+    left: 5px;
+    top:-18px;
+  }
+  footer {
+    font-style: italic;
+    float: right;
+    padding-right: 4px;
+  }
+}
+
+
+table {
+  background-color: @colBackground2;
+  border-collapse: collapse;
+  tr{
+    &:last-child {
+      border-right: 2px solid @colBackground1;
+      td {
+        border-bottom: 2px solid @colBackground1;
+      }
+    }
+    td {
+      padding: 2px;
+      border-right: 2px solid @colBackground3;
+      border-bottom: 2px solid @colBackground3;
+      &:first-child {
+        text-align: right;
+        border-right: 2px solid @colBackground1;
+        border-bottom: 2px solid @colBackground1;
+      }
+      &:last-child {
+        border-right: 2px solid @colBackground1;
+      }
+      &:hover {
+        padding: 2px;
+        background-color: @colBackground3;
+      }
+    }
+  }
+  th {
+    padding: 5px;
+    border-right: 2px solid @colBackground1;
+    border-bottom: 2px solid @colBackground1;
+  }
+}
