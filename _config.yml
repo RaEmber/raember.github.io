@@ -17,7 +17,7 @@ title: rember
 email: raphael.emberger@hotmail.com
 description: > # this means to ignore newlines until "baseurl:"
   My glorious blog I created to totally expose my evil plan of world domination.
-baseurl: "/_site" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://raember.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  RaEmber
 
