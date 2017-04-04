@@ -1,3 +1,5 @@
+//main: styleGreen.less
+
 @leftbarwidthmin: 50px;
 @leftbarwidthmax: 250px;
 @trianglewidth: 50px;
@@ -20,42 +22,6 @@
   src: url("consola.ttf");
 }
 
-@keyframes title {
-  from {
-    margin-top: 60px;
-    margin-bottom: -140px;
-    background-color: @colBackground1;
-  }
-  to {
-    margin-top: 30px;
-    margin-bottom: -110px;
-    background-color: @colBackground2;
-  }
-}
-@keyframes triangle {
-  from {
-    margin-top: 20px+@trianglewidth;
-    border-top: 0px solid transparent;
-    border-bottom: 0px solid transparent;
-    border-left: 0px solid @colBar;
-  }
-  to {
-    margin-top: 20px;
-    border-top: @trianglewidth solid transparent;
-    border-bottom: @trianglewidth solid transparent;
-    border-left: @trianglewidth solid @colBar;
-  }
-}
-@keyframes article {
-  from {
-    margin-top: 160px;
-    opacity: 0;
-  }
-  to {
-    margin-top: 130px;
-    opacity: 100;
-  }
-}
 
 html, body {
   background-color: @colBackground1;
@@ -67,51 +33,9 @@ html, body {
 }
 
 
-nav{
-  &.leftbar {
-    width: @leftbarwidthmin;
-    height: 100%;
-    background-color: @colBar;
-    float: left;
-    -webkit-transition: width 1s;
-    &:hover {
-      width: @leftbarwidthmax;
-      ul {
-        margin-left: -@leftbarwidthmin;
-        opacity: 1;
-        visibility: visible;
-        color: @colFont;
-      }
-    }
-    ul {
-      position: fixed;
-      width: @leftbarwidthmax;
-      padding-top: 40px;
-      list-style-type: none;
-      opacity: 0;
-      margin-left: 40px-@leftbarwidthmax;
-      color: @colBar;
-      -webkit-transition: margin-left 1s, opacity 0.8s;
-      li{
-    		padding-left: 20px;
-    		&.topic {
-          margin-top: 1em;
-    		  color: @colBar;
-    		  background-color: @colBackground3;
-    		  margin-right: 60px;
-    		}
-    		a {
-            color: @colBackground1;
-            text-decoration: none;
-            &:hover {
-              color: @colBackground2;
-            }
-  	    }
-      }
-    }
-  }
-}
+@import "nav";
 
+@import "article";
 
 div {
   &.leftoffset {
@@ -121,7 +45,7 @@ div {
   }
   &.leftbox {
     margin-top: 30px;
-    margin-bottom: -110px;
+    margin-bottom: 40px;
     width: auto;
     height: 80px;
     background: @colBackground2;
@@ -132,7 +56,7 @@ div {
   }
   &.triangle {
     height: 0px;
-    margin-top:  20px;
+    margin-top:  -130px;
     border-top: @trianglewidth solid transparent;
     border-bottom: @trianglewidth solid transparent;
     border-left: @trianglewidth solid @colBar;
@@ -142,46 +66,46 @@ div {
     animation-timing-function: ease-out;
   }
 }
+@keyframes triangle {
+  from {
+    margin-top: -100px+@trianglewidth;
+    border-top: 0px solid transparent;
+    border-bottom: 0px solid transparent;
+    border-left: 0px solid @colBar;
+  }
+  to {
+    margin-top: -130px;
+    border-top: @trianglewidth solid transparent;
+    border-bottom: @trianglewidth solid transparent;
+    border-left: @trianglewidth solid @colBar;
+  }
+}
 
 h1 {
   float: left;
   height: 80px;
   margin-top: 30px;
-  margin-bottom: -110px;
+  margin-bottom: 40px;
   background-color: @colBackground2;
   font-size: 26pt;
   font-family: @fontSegoeUI;
   line-height: 75px;
   padding-right: 60px;
-  animation-name: title;
+  //animation-name: title;
   animation-duration: 0.8s;
   animation-delay: 0s;
   animation-timing-function: ease-out;
 }
-
-article {
-  float: left;
-  margin-top: 130px;
-  width: 1000px;
-  height: auto;
-  animation-name: article;
-  animation-duration: 1.2s;
-  animation-delay: 0s;
-  animation-timing-function: ease-out;
-  ul {
-    list-style-type: none;
-    padding-left: 15px;
-    li {
-      padding-left: 1em;
-      text-indent: -1em;
-      &:before {
-        content: "\25A0";
-        padding-right: 5px;
-      }
-    }
+@keyframes title {
+  from {
+    margin-top: 60px;
+    margin-bottom:10px;
+    background-color: @colBackground1;
   }
-  ol {
-    padding-left: 34px;
+  to {
+    margin-top: 30px;
+    margin-bottom: 40px;
+    background-color: @colBackground2;
   }
 }
 

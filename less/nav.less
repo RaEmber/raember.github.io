@@ -1,0 +1,45 @@
+//main: style.less
+nav{
+  &.leftbar {
+    width: @leftbarwidthmin;
+    height: 100%;
+    background-color: @colBar;
+    float: left;
+    -webkit-transition: width 1s;
+    &:hover {
+      width: @leftbarwidthmax;
+      ul {
+        margin-left: -@leftbarwidthmin;
+        opacity: 1;
+        visibility: visible;
+        color: @colFont;
+      }
+    }
+    ul {
+      position: fixed;
+      width: @leftbarwidthmax;
+      padding-top: 40px;
+      list-style-type: none;
+      opacity: 0;
+      margin-left: 40px-@leftbarwidthmax;
+      color: @colBar;
+      -webkit-transition: margin-left 1s, opacity 0.8s;
+      li{
+    		padding-left: 20px;
+    		&.topic {
+          margin-top: 1em;
+    		  color: @colBar;
+    		  background-color: @colBackground3;
+    		  margin-right: 60px;
+    		}
+    		a {
+            color: @colBackground1;
+            text-decoration: none;
+            &:hover {
+              color: @colBackground2;
+            }
+  	    }
+      }
+    }
+  }
+}

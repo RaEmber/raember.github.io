@@ -1,11 +1,26 @@
 ---
-layout: default
+layout:	default
+title:	Home
+color:	Green
 ---
-{% include green.html %}
 <h1>TITELSEITE</h1>
 <article id="content">
 <blockquote>The idea behind digital computers may be explained by saying that these machines are intended to carry out any operations which could be done by a human computer.
 <footer>Alan Turing</footer></blockquote>
+{% for post in site.posts %}
+	<article class="post">
+		<header class="post-header">
+			<h2 class="post-title"><a href="{{ site.github_url }}{{ post.url }}">{{ post.title }}</a></h2>
+		</header>
+		<section class="post-excerpt">
+			<p>{{ post.description }}</p>
+		</section>
+		<footer class="post-meta">
+			by <a href="{{ site.github_url }}about">{{ site.author.name }}</a> <img class="author-thumb" src="{{ site.author.picture }}" alt="{{ site.author.name }}">
+			<time class="post-date" datetime="{{ post.date | date: "%-Y-%m-%d" }}">{{ post.date | date: "%d %b %Y" }}</time>
+		</footer>
+	</article>
+{% endfor %}
 <p>So, I'm supposed to write something interesting here now?</p>
 <ul>
 	<li>test node</li>

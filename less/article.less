@@ -1,0 +1,38 @@
+//main: style.less
+div.content {
+  float: left;
+  width: 80%;
+  height: auto;
+  margin-top: 30px;
+  animation-name: article;
+  animation-duration: 1.2s;
+  animation-delay: 0s;
+  animation-timing-function: ease-out;
+  ul {
+    list-style-type: none;
+    padding-left: 15px;
+    li {
+      padding-left: 1em;
+      text-indent: -1em;
+      &:before {
+        content: "\25A0";
+        padding-right: 5px;
+      }
+    }
+  }
+  ol {
+    padding-left: 34px;
+  }
+}
+
+
+@keyframes article {
+  from {
+    margin-top: 30px;
+    opacity: 0;
+  }
+  to {
+    margin-top: 0px;
+    opacity: 100;
+  }
+}
