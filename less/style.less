@@ -5,28 +5,31 @@
 @trianglewidth: 50px;
 @triangleofftop: 80px;
 
-@fontSegoeUI: "SegoeUI";
-@fontSegoeUILight: "SegoeUILight";
-@fontConsolas: "Consolas";
+@fontMain: "SegoeUI";
+@fontMainTTF: "font/segoeui.ttf";
+@fontLight: "SegoeUILight";
+@fontLightTTF: "font/segoeuil.ttf";
+@fontMonospace: "Consolas";
+@fontMonospaceTTF: "font/consola.ttf";
 
 @font-face {
-  font-family: @fontSegoeUI;
-  src: url("segoeui.ttf");
+  font-family: @fontMain;
+  src: url(@fontMainTTF);
 }
 @font-face {
-  font-family: @fontSegoeUILight;
-  src: url("segoeuil.ttf");
+  font-family: @fontLight;
+  src: url(@fontLightTTF);
 }
 @font-face {
-  font-family: @fontConsolas;
-  src: url("consola.ttf");
+  font-family: @fontMonospace;
+  src: url(@fontMonospaceTTF);
 }
 
 
-html, body {
+body {
   background-color: @colBackground1;
   color: @colFont;
-  font-family: @fontSegoeUI;
+  font-family: @fontMain;
   margin: 0;
   padding: 0;
   height: 100%;
@@ -59,7 +62,7 @@ div {
     margin-top:  -130px;
     border-top: @trianglewidth solid transparent;
     border-bottom: @trianglewidth solid transparent;
-    border-left: @trianglewidth solid @colBar;
+    border-left: @trianglewidth solid @colMain;
     animation-name: triangle;
     animation-duration: 0.8s;
     animation-delay: 0s;
@@ -71,13 +74,13 @@ div {
     margin-top: -100px+@trianglewidth;
     border-top: 0px solid transparent;
     border-bottom: 0px solid transparent;
-    border-left: 0px solid @colBar;
+    border-left: 0px solid @colMain;
   }
   to {
     margin-top: -130px;
     border-top: @trianglewidth solid transparent;
     border-bottom: @trianglewidth solid transparent;
-    border-left: @trianglewidth solid @colBar;
+    border-left: @trianglewidth solid @colMain;
   }
 }
 
@@ -88,23 +91,25 @@ h1 {
   margin-bottom: 40px;
   background-color: @colBackground2;
   font-size: 26pt;
-  font-family: @fontSegoeUI;
+  font-family: @fontMain;
   line-height: 75px;
   padding-right: 60px;
-  //animation-name: title;
+  animation-name: title;
   animation-duration: 0.8s;
   animation-delay: 0s;
   animation-timing-function: ease-out;
 }
 @keyframes title {
   from {
-    margin-top: 60px;
-    margin-bottom:10px;
+    //margin-top: 60px;
+    //margin-bottom:10px;
+    margin-left: -30px;
     background-color: @colBackground1;
   }
   to {
-    margin-top: 30px;
-    margin-bottom: 40px;
+    //margin-top: 30px;
+    //margin-bottom: 40px;
+    margin-left: 0px;
     background-color: @colBackground2;
   }
 }
