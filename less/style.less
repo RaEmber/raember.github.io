@@ -5,24 +5,24 @@
 @trianglewidth: 50px;
 @triangleofftop: 80px;
 
-@fontMain: "SegoeUI";
-@fontMainTTF: "font/segoeui.ttf";
-@fontLight: "SegoeUILight";
-@fontLightTTF: "font/segoeuil.ttf";
-@fontMonospace: "Consolas";
-@fontMonospaceTTF: "font/consola.ttf";
+@fontMain: "Ubuntu Regular";
+@fontMainFile: "font/Ubuntu-R.ttf";
+@fontLight: "Ubuntu Light";
+@fontLightFile: "font/Ubuntu-L.ttf";
+@fontMonospace: "Inconsolata-g for Powerline";
+@fontMonospaceFile: "font/Inconsolata-g for Powerline.otf";
 
 @font-face {
   font-family: @fontMain;
-  src: url(@fontMainTTF);
+  src: url(@fontMainFile);
 }
 @font-face {
   font-family: @fontLight;
-  src: url(@fontLightTTF);
+  src: url(@fontLightFile);
 }
 @font-face {
   font-family: @fontMonospace;
-  src: url(@fontMonospaceTTF);
+  src: url(@fontMonospaceFile) format(opentype);
 }
 
 
@@ -39,6 +39,12 @@ body {
 @import "nav";
 
 @import "article";
+
+span.powerline0 {
+  background-color: @colGreen1;
+  color: @colBackground1;
+  font-family: @fontMonospace;
+}
 
 div {
   &.leftoffset {
@@ -126,7 +132,6 @@ blockquote {
     content: "\201C";
     font-size: 70px;
     font-weight: bold;
-    color: @colFont2;
     position: absolute;
     left: 5px;
     top:-18px;
@@ -139,7 +144,7 @@ blockquote {
 }
 
 
-table {
+table.table {
   background-color: @colBackground2;
   border-collapse: collapse;
   tr{
@@ -173,3 +178,5 @@ table {
     border-bottom: 2px solid @colBackground1;
   }
 }
+
+@import "syntax";

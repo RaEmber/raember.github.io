@@ -21,7 +21,8 @@ color:	Green
 		</footer>
 	</article>
 {% endfor %}
-<p>So, I'm supposed to write something interesting here now?</p>
+<p>The <strong>quick</strong> <em>brown</em> fox jumps over the lazy dog.
+	<br>So, I'm supposed to write something interesting here now? <span class="powerline">&#xE0B0&#x3042&#x26A1&#xE0B0&#x2699</span></p>
 <ul>
 	<li>test node</li>
 	<li>test node</li>
@@ -30,7 +31,7 @@ color:	Green
 	<li>test node</li>
 	<li>test node</li>
 </ol>
-<table width="500" summary="Zusammenfassung">
+<table class="table" width="500" summary="Zusammenfassung">
 	<caption>
 		Beschriftung
 	</caption>
@@ -56,28 +57,38 @@ color:	Green
 		<td>435</td>
 	</tr>
 </table>
-<pre class="brush: vb;">
-	Public MustInherit Class Foo
+{% highlight java linenos %}
+import java.io.*;
+import java.util.*;
 
-		Protected strSafe As String
+public class KeyboardIntegerReader {
 
-		Public ReadOnly Property Safe
-			return strSafe
-		End Property
-	#region "functions"
-		Protected Function InterpolateBezier(ByVal x As Integer,
-											 ByRef option As BezierOption) As List(Of Double)
-			'TODO: Do some dark magic and return its result.
-			'pretty please ^^
-		End Function
-		Public Sub TestMe()
-			String testStr = "Hi there!"
-			Using FS As New System.IO.FileStream("file path")
-				FS.read(42)
-			End Using
-		End Sub
-	#end region
-	End Class</pre>
+    public static void main (String[] args) throws java.io.IOException {
+        String s1;
+        String s2;
+        int num = 0;
+
+        // set up the buffered reader to read from the keyboard
+        BufferedReader br = new BufferedReader (new InputStreamReader (System.in));
+        boolean cont = true;
+
+        while (cont) {
+            System.out.print ("Enter an integer:");
+            s1 = br.readLine();
+            StringTokenizer st = new StringTokenizer (s1);
+            s2 = "";
+
+            while (cont && st.hasMoreTokens()) {
+                try {
+                    s2 = st.nextToken();
+                    num = Integer.parseInt(s2);
+                    cont = false;
+                }
+            }
+        }
+    }
+}
+{% endhighlight %}
 <p>Suppose we have a function
 	<math xmlns="http://www.w3.org/1998/Math/MathML">
 	<mrow>
