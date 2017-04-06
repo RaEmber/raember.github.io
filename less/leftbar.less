@@ -1,0 +1,46 @@
+//main: style.less
+@leftbarwidthstart: 50px;
+@leftbarwidthend: 250px;
+
+.leftbar {
+  width: @leftbarwidthstart;
+  height: 100%;
+  background-color: @colMain;
+  float: left;
+  -webkit-transition: width 1s;
+  &:hover {
+    width: @leftbarwidthend;
+    ul {
+      margin-left: -@leftbarwidthstart;
+      opacity: 1;
+      visibility: visible;
+      color: @colFont;
+    }
+  }
+  .nav {
+    position: fixed;
+    width: @leftbarwidthend;
+    padding-top: 40px;
+    list-style-type: none;
+    opacity: 0;
+    margin-left: 40px-@leftbarwidthend;
+    color: @colMain;
+    -webkit-transition: margin-left 1s, opacity 0.8s;
+    li{
+  		padding-left: 20px;
+  		&.topic {
+        margin-top: 1em;
+  		  color: @colMain;
+  		  background-color: @colBackground3;
+  		  margin-right: 60px;
+  		}
+  		a {
+          color: @colBackground1;
+          text-decoration: none;
+          &:hover {
+            color: @colBackground2;
+          }
+	    }
+    }
+  }
+}

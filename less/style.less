@@ -1,7 +1,5 @@
 //main: styleGreen.less
 
-@leftbarwidthmin: 50px;
-@leftbarwidthmax: 250px;
 @trianglewidth: 50px;
 @triangleofftop: 80px;
 
@@ -26,19 +24,15 @@
 }
 
 
-body {
-  background-color: @colBackground1;
-  color: @colFont;
-  font-family: @fontMain;
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-
-
-@import "nav";
-
+@import "body";
+@import "leftbar";
 @import "article";
+
+div.leftoffset {
+  width: @trianglewidth;
+  height: 100%;
+  float: left;
+}
 
 span.powerline0 {
   background-color: @colGreen1;
@@ -47,11 +41,6 @@ span.powerline0 {
 }
 
 div {
-  &.leftoffset {
-    width: @trianglewidth;
-    height: 100%;
-    float: left;
-  }
   &.leftbox {
     margin-top: 30px;
     margin-bottom: 40px;
