@@ -89,29 +89,31 @@ public class KeyboardIntegerReader {
     }
 }
 {% endhighlight %}
-<p>Suppose we have a function
-	<math xmlns="http://www.w3.org/1998/Math/MathML">
-	<mrow>
-		<mi>f</mi>
-		<mrow>
-			<mo form="prefix">(</mo>
-			<mi>x</mi>
-			<mo form="postfix">)</mo>
-		</mrow>
-	</mrow>
-	</math>
-	and another function
-	<math xmlns="http://www.w3.org/1998/Math/MathML">
-	<mrow>
-		<mi>g</mi>
-		<mrow>
-			<mo form="prefix">(</mo>
-			<mi>x</mi>
-			<mo form="postfix">)</mo>
-		</mrow>
-	</mrow>
-	</math>
-	. Then, folded with each other this results in:
+$$
+\begin{align*}
+  & \phi(x,y) = \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right)
+  = \sum_{i=1}^n \sum_{j=1}^n x_i y_j \phi(e_i, e_j) = \\
+  & (x_1, \ldots, x_n) \left( \begin{array}{ccc}
+      \phi(e_1, e_1) & \cdots & \phi(e_1, e_n) \\
+      \vdots & \ddots & \vdots \\
+      \phi(e_n, e_1) & \cdots & \phi(e_n, e_n)
+    \end{array} \right)
+  \left( \begin{array}{c}
+      y_1 \\
+      \vdots \\
+      y_n
+    \end{array} \right)
+\end{align*}
+$$
+<p>
+	The following is a math block:
+
+	$$ 5 + 5 $$
+
+	But next comes a paragraph with an inline math statement:
+
+	\$$ 5 + 5 $$
+	Suppose we have a function \$$f(x)$$ and another function $$g(x)$$. Then, folded with each other this results in:
 	<math xmlns="http://www.w3.org/1998/Math/MathML">
 	<mtable class="m-equation" displaystyle="true" style="display: block; margin-top: 1.0em; margin-bottom: 2.0em">
 		<mtr>

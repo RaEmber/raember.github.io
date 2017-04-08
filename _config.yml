@@ -32,5 +32,6 @@ exclude:
   - README.md
   - .git
   - LICENSE
+source: html
 
 # theme: dark
