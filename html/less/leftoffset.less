@@ -1,0 +1,68 @@
+//main: style.less
+
+@offset: 60px;
+
+@leftboxtop: 30px;
+@leftboxheight: 80px;
+
+@trianglewidth: 50px;
+@triangleofftop: 80px;
+
+@animduration: 0.8s;
+
+.leftoffset {
+  width: @offset;
+  height: auto;
+  float: left;
+  animation-name: leftbox;
+  animation-duration: @animduration;
+  animation-delay: 0s;
+  animation-timing-function: ease-out;
+  .leftbox {
+    margin-top: @leftboxtop;
+    margin-bottom: -@leftboxheight/2;
+    width: @offset;
+    height: @leftboxheight;
+    background: @colBackground2;
+    animation-name: leftbox;
+    animation-duration: @animduration;
+    animation-delay: 0s;
+    animation-timing-function: ease-out;
+  }
+  .triangle {
+    height: 0px;
+    margin-top:  -@leftboxheight/2-@trianglewidth;
+    border-top: @trianglewidth solid transparent;
+    border-bottom: @trianglewidth solid transparent;
+    border-left: @trianglewidth solid @colMain;
+    animation-name: triangle;
+    animation-duration: @animduration;
+    animation-delay: 0s;
+    animation-timing-function: ease-out;
+  }
+}
+
+@keyframes leftbox {
+  from {
+    width: 0px;
+  }
+  to {
+    width: @offset;
+  }
+}
+
+
+@keyframes triangle {
+  from {
+    margin-top: -@leftboxheight/2;
+    border-top: 0px solid transparent;
+    border-bottom: 0px solid transparent;
+    border-left: 0px solid @colMain;
+  }
+  to {
+    margin-top: -@leftboxheight/2-@trianglewidth;
+    border-top: @trianglewidth solid transparent;
+    border-bottom: @trianglewidth solid transparent;
+    border-left: @trianglewidth solid @colMain;
+  }
+}

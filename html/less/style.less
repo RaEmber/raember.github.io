@@ -1,7 +1,5 @@
 //main: styleGreen.less
 
-@trianglewidth: 50px;
-@triangleofftop: 80px;
 
 @fontMain: "Ubuntu Regular";
 @fontMainFile: "font/Ubuntu-R.ttf";
@@ -27,12 +25,7 @@
 @import "body";
 @import "leftbar";
 @import "article";
-
-div.leftoffset {
-  width: @trianglewidth;
-  height: 100%;
-  float: left;
-}
+@import "leftoffset";
 
 span.powerline0 {
   background-color: @colGreen1;
@@ -41,45 +34,6 @@ span.powerline0 {
 }
 .MathJax_Display {
   color: @colFont;
-}
-
-div {
-  &.leftbox {
-    margin-top: 30px;
-    margin-bottom: 40px;
-    width: auto;
-    height: 80px;
-    background: @colBackground2;
-    animation-name: title;
-    animation-duration: 0.8s;
-    animation-delay: 0s;
-    animation-timing-function: ease-out;
-  }
-  &.triangle {
-    height: 0px;
-    margin-top:  -130px;
-    border-top: @trianglewidth solid transparent;
-    border-bottom: @trianglewidth solid transparent;
-    border-left: @trianglewidth solid @colMain;
-    animation-name: triangle;
-    animation-duration: 0.8s;
-    animation-delay: 0s;
-    animation-timing-function: ease-out;
-  }
-}
-@keyframes triangle {
-  from {
-    margin-top: -100px+@trianglewidth;
-    border-top: 0px solid transparent;
-    border-bottom: 0px solid transparent;
-    border-left: 0px solid @colMain;
-  }
-  to {
-    margin-top: -130px;
-    border-top: @trianglewidth solid transparent;
-    border-bottom: @trianglewidth solid transparent;
-    border-left: @trianglewidth solid @colMain;
-  }
 }
 
 h1 {
