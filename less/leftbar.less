@@ -4,8 +4,10 @@
 @navwidth: -50+@leftbarwidthend;
 
 .leftbar {
+  z-index: 10;
+  position: relative;
   width: @leftbarwidthstart;
-  height: 1000px;
+  height: 100vh;
   background-color: @colMain;
   float: left;
   -webkit-transition: width 0.8s;

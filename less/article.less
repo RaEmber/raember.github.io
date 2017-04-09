@@ -1,13 +1,13 @@
 //main: style.less
-.content {
+article {
   float: left;
+  position: relative;
   width: 80%;
-  height: auto;
-  //margin-top: 30px;
   animation-name: content;
   animation-duration: @animduration;
   animation-delay: 0s;
   animation-timing-function: ease-out;
+
   ul {
     list-style-type: none;
     padding-left: 15px;
@@ -28,5 +28,5 @@
 
 @keyframes content {
   from { opacity: 0; }
-  to { opacity: 100; }
+  to { opacity: 1; }
 }

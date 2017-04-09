@@ -23,6 +23,14 @@
 
 
 @import "body";
+img.wallpaper {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100vw;
+  z-index: -10;
+  overflow-x: scroll;
+}
 @import "leftbar";
 @import "article";
 @import "leftoffset";
@@ -37,34 +45,18 @@ span.powerline0 {
 }
 
 h1 {
-  float: left;
+  display: inline-block;
   height: 80px;
   margin-top: 30px;
-  margin-bottom: 40px;
+  margin-bottom: 485px-30px;
+  padding-right: 40px;
   background-color: @colBackground2;
   font-size: 26pt;
   font-family: @fontMain;
   line-height: 75px;
   padding-right: 60px;
-  animation-name: title;
-  animation-duration: 0.8s;
-  animation-delay: 0s;
-  animation-timing-function: ease-out;
 }
-@keyframes title {
-  from {
-    //margin-top: 60px;
-    //margin-bottom:10px;
-    margin-left: -30px;
-    background-color: @colBackground1;
-  }
-  to {
-    //margin-top: 30px;
-    //margin-bottom: 40px;
-    margin-left: 0px;
-    background-color: @colBackground2;
-  }
-}
+
 
 blockquote {
   width: auto;

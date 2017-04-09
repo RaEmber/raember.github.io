@@ -4,19 +4,23 @@
 	<meta charset="utf-8">
 	<title>{{page.title}}</title>
 	<link rel="stylesheet" type="text/css" href="{{site.baseurl}}/css/style{{page.color}}.css"/>
-	<script type="text/javascript" src="{{site.baseurl}}/js/resetbar.js"></script>
-	<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+	{% for js in page.javascript %}
+	<script type="text/javascript" src="{{site.baseurl}}{{js}}"></script>
+	{% endfor %}
 </head>
 <body>
-<nav class="leftbar">
+<img class="wallpaper" src="{{site.baseurl}}/img/black.jpg"></img>
+<nav class="leftbar" id="nav">
 {% include nav.html %}
 </nav>
 <div class="leftoffset">
 	<div class="leftbox"></div>
 	<div class="triangle"></div>
 </div>
-<div class="content">
+<article id="content">
+<h1>{{page.caption}}</h1>
 {{content}}
+</article>
 </div>
 <script type="text/javascript">resetbar();</script>
 </body>

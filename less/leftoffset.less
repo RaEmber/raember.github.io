@@ -19,17 +19,19 @@
   animation-delay: 0s;
   animation-timing-function: ease-out;
   .leftbox {
+    z-index: 9;
     margin-top: @leftboxtop;
     margin-bottom: -@leftboxheight/2;
     width: @offset;
     height: @leftboxheight;
-    background: @colBackground2;
+    background-color: @colBackground2;
     animation-name: leftbox;
     animation-duration: @animduration;
     animation-delay: 0s;
     animation-timing-function: ease-out;
   }
   .triangle {
+    z-index: 10;
     height: 0px;
     margin-top:  -@leftboxheight/2-@trianglewidth;
     border-top: @trianglewidth solid transparent;
@@ -44,10 +46,10 @@
 
 @keyframes leftbox {
   from {
-    width: 0px;
+  width: 0px;
   }
   to {
-    width: @offset;
+  width: @offset;
   }
 }
 
