@@ -1,22 +1,43 @@
 <!DOCTYPE html>
 <html lang="en-us">
-<head>
-	<meta charset="utf-8">
-	<title>{{page.title}}</title>
-	<link rel="stylesheet" type="text/css" href="{{site.baseurl}}/css/style{{page.color}}.css"/>
-	<script type="text/javascript" src="{{site.baseurl}}/js/resetbar.js"></script>
-</head>
-<body>
-<nav class="leftbar" id="nav">
-{% include nav.html %}
-</nav>
-<div class="leftoffset">
-	<div class="leftbox"></div>
-	<div class="triangle"></div>
-</div>
-<div class="content">
-{{content}}
-</div>
-<script type="text/javascript">resetbar();</script>
-</body>
+
+  {% include head.html %}
+
+  <body class="base-colored">
+
+    {% include sidebar.html %}
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h1 class="masthead-title">{{ page.title }}</h1>
+        </div>
+      </div>
+
+      <div class="container content">
+        {{ content }}
+      </div>
+    </div>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+  </body>
 </html>

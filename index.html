@@ -1,163 +1,33 @@
 ---
-layout:	default
-title:	Home
-color:	Green
+layout: default
+title: Home
+ownstyles: [styleGreen]
 ---
-<h1>TITELSEITE</h1>
-<article id="content">
-<blockquote>The idea behind digital computers may be explained by saying that these machines are intended to carry out any operations which could be done by a human computer.
-<footer>Alan Turing</footer></blockquote>
-{% for post in site.posts %}
-	<article class="post">
-		<header class="post-header">
-			<h2 class="post-title"><a href="{{ site.github_url }}{{ post.url }}">{{ post.title }}</a></h2>
-		</header>
-		<section class="post-excerpt">
-			<p>{{ post.description }}</p>
-		</section>
-		<footer class="post-meta">
-			by <a href="{{ site.github_url }}about">{{ site.author.name }}</a> <img class="author-thumb" src="{{ site.author.picture }}" alt="{{ site.author.name }}">
-			<time class="post-date" datetime="{{ post.date | date: "%-Y-%m-%d" }}">{{ post.date | date: "%d %b %Y" }}</time>
-		</footer>
-	</article>
-{% endfor %}
-<p>So, I'm supposed to write something interesting here now?</p>
-<ul>
-	<li>test node</li>
-	<li>test node</li>
-</ul>
-<ol>
-	<li>test node</li>
-	<li>test node</li>
-</ol>
-<table width="500" summary="Zusammenfassung">
-	<caption>
-		Beschriftung
-	</caption>
-	<tr>
-		<th scope="col"></th>
-		<th scope="col">Druck/GPa</th>
-		<th scope="col">Zug/GPa</th>
-		<th scope="col">Scherung/GPa</th>
-		<th scope="col">Torsion/GPa</th>
-	</tr>
-	<tr>
-		<td>L-Profil</td>
-		<td>3245.76</td>
-		<td>345</td>
-		<td>7564</td>
-		<td>345.0</td>
-	</tr>
-	<tr>
-		<td>Rohr</td>
-		<td>456</td>
-		<td>754.435</td>
-		<td>500</td>
-		<td>435</td>
-	</tr>
-</table>
-<pre class="brush: vb;">
-	Public MustInherit Class Foo
 
-		Protected strSafe As String
+<div class="posts">
+  {% for post in paginator.posts %}
+  <div class="post">
+    <h1 class="post-title">
+      <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+    </h1>
+    <span class="post-date">{{ post.date | date_to_string }}</span>
+  </div>
+  {% endfor %}
+</div>
 
-		Public ReadOnly Property Safe
-			return strSafe
-		End Property
-	#region "functions"
-		Protected Function InterpolateBezier(ByVal x As Integer,
-											 ByRef option As BezierOption) As List(Of Double)
-			'TODO: Do some dark magic and return its result.
-			'pretty please ^^
-		End Function
-		Public Sub TestMe()
-			String testStr = "Hi there!"
-			Using FS As New System.IO.FileStream("file path")
-				FS.read(42)
-			End Using
-		End Sub
-	#end region
-	End Class</pre>
-<p>Suppose we have a function
-	<math xmlns="http://www.w3.org/1998/Math/MathML">
-	<mrow>
-		<mi>f</mi>
-		<mrow>
-			<mo form="prefix">(</mo>
-			<mi>x</mi>
-			<mo form="postfix">)</mo>
-		</mrow>
-	</mrow>
-	</math>
-	and another function
-	<math xmlns="http://www.w3.org/1998/Math/MathML">
-	<mrow>
-		<mi>g</mi>
-		<mrow>
-			<mo form="prefix">(</mo>
-			<mi>x</mi>
-			<mo form="postfix">)</mo>
-		</mrow>
-	</mrow>
-	</math>
-	. Then, folded with each other this results in:
-	<math xmlns="http://www.w3.org/1998/Math/MathML">
-	<mtable class="m-equation" displaystyle="true" style="display: block; margin-top: 1.0em; margin-bottom: 2.0em">
-		<mtr>
-			<mtd>
-				<mspace width="6.0em" />
-			</mtd>
-			<mtd columnalign="left">
-				<mrow>
-					<mo form="prefix">(</mo>
-					<mi>f</mi>
-					<mo>*</mo>
-					<mi>g</mi>
-					<mo form="postfix">)</mo>
-				</mrow>
-				<mrow>
-					<mo form="prefix">(</mo>
-					<mi>x</mi>
-					<mo form="postfix">)</mo>
-				</mrow>
-				<mo>:</mo>
-				<mo>=</mo>
-				<mstyle displaystyle="true">
-					<munder>
-						<mo>&#x0222B;</mo>
-						<mrow>
-							<msup>
-								<mi>&#x0211D;</mi>
-								<mi>n</mi>
-							</msup>
-						</mrow>
-					</munder>
-				</mstyle>
-				<mi>f</mi>
-				<mrow>
-					<mo form="prefix">(</mo>
-					<mi>&#x003C4;</mi>
-					<mo form="postfix">)</mo>
-				</mrow>
-				<mi>g</mi>
-				<mrow>
-					<mo form="prefix">(</mo>
-					<mi>x</mi>
-					<mo>-</mo>
-					<mi>&#x003C4;</mi>
-					<mo form="postfix">)</mo>
-				</mrow>
-				<mi mathvariant="normal">d</mi>
-				<mi>&#x003C4;</mi>
-			</mtd>
-			<mtd columnalign="right" style="width: 100%">
-				<mtext id="">(1)</mtext>
-				<mspace width="6.0em" />
-			</mtd>
-		</mtr>
-	</mtable>
-	</math>
-	This is the definition of folding two functions.
-</p>
-<p>This would certainly look better in LaTeX, but MathML has to do the trick for now.</p>
-</article>
+<div class="pagination">
+  {% if paginator.next_page %}
+    <a class="pagination-item older" href="{{ site.baseurl }}/page{{paginator.next_page}}">Older</a>
+  {% else %}
+    <span class="pagination-item older">Older</span>
+  {% endif %}
+  {% if paginator.previous_page %}
+    {% if paginator.page == 2 %}
+      <a class="pagination-item newer" href="{{ site.baseurl }}/">Newer</a>
+    {% else %}
+      <a class="pagination-item newer" href="{{ site.baseurl }}/page{{paginator.previous_page}}">Newer</a>
+    {% endif %}
+  {% else %}
+    <span class="pagination-item newer">Newer</span>
+  {% endif %}
+</div>
