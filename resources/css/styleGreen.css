@@ -442,13 +442,13 @@ a.pagination-item:hover {
 }
 .highlight {
   margin: 0 0 1rem;
+  white-space: pre-wrap;
+  background-color: #262424;
 }
 .highlight pre {
   margin: 0;
   overflow: auto;
   padding: 0;
-  white-space: pre;
-  background-color: #262424;
 }
 .highlight pre code table {
   margin-bottom: 0px;
@@ -457,7 +457,7 @@ a.pagination-item:hover {
   border: none;
 }
 .highlight pre code table tbody tr td.gutter {
-  max-width: 25px;
+  max-width: 40px;
 }
 .code {
   padding-top: 0px;

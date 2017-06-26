@@ -28,6 +28,8 @@ Grab yourself your web browser of trust and open a new tab. Navigate to [YouTube
 
 Watch the video 5-6 times(important!), then open up the developer tools and change to a view which shows you the network traffic of this very tab. Maybe you'll have to reload the page to clear the previous entries. Now you should see entries like:
 
+<a name="network_data"></a>
+
 | Status | Method | Domain                                | File                                                                                |
 |:------:| ------ | -------------------------------------:|:----------------------------------------------------------------------------------- |
 | 200    | GET    | www.youtube.com                       | /watch?v=rNSnfXl1ZjU                                                                |
@@ -134,7 +136,7 @@ url: `https://r7---sn-nfpnnjvh-9anz.googlevideo.com/videoplayback?itag=248&ipbit
 
 Again: What those keys and values mean is something I address in [another post](/2017/06/24/youtube_formats/). Now, to make this download link work, we have to add a `&ratebypass=yes` query and we're done.
 
-At least in this simple case. Most of the times we have to deal with formats having an `s`-key with a value that resembles a signature. However, we can't just add it to our download link - we have do some manipulation on it to turn it into a valid signature. This is where it gets nasty, because the algorithm to *decipher* this string is in a JavaScript file named `base.js` which is shortened and therefore barely readable. It's exact path can be found in the Json object at `assets.js`. In there, one can find a call which sets the `signature` to the result of another method call:
+<a name="base_js"></a>At least in this simple case. Most of the times we have to deal with formats having an `s`-key with a value that resembles a signature. However, we can't just add it to our download link - we have do some manipulation on it to turn it into a valid signature. This is where it gets nasty, because the algorithm to *decipher* this string is in a JavaScript file named `base.js` which is shortened and therefore barely readable. It's exact path can be found in the Json object at `assets.js`. In there, one can find a call which sets the `signature` to the result of another method call:
 
 {% highlight js %}
 .set("signature",yE(c)
