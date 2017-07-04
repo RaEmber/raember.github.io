@@ -40,7 +40,7 @@ However, one can find additional data regarding the format of normal videos by l
 | Index | Meaning | Possible Values |
 | ----- | ------- | --------------- |
 | `1` | itag | 17, 36, 18, 22, 43, *maybe more* |
-| `2` | width times height | "176x144", "204x172", "240x180", "242x180", ...* |
+| `2` | width times height | "176x144", "204x172", "240x180", "242x180", ... |
 | `3` | ? | 9, 99 |
 | `4` | ? | 0, 1 |
 | `5` | ? | 0, 115 |

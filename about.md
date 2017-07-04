@@ -34,7 +34,7 @@ Then a 2 year period followed where I expanded my knowledge and programmed many 
 
 Some of those projects were never completed, but most of them worked back then.
 
-So I enrolled into ZHAW in '14 and studied mechanical engineering because I used to be a constructer. Since then I didn't have much time for programming. Fortunately I realized one year and a bit later, that I content with what I was majoring in and decided that computer science was the way to go. However, I was a bit too late for switching right away to CS and therefore I didn't drop out immediately - instead I only attended courses I could transfer to my future cs studies: Analysis, numerics and such.
+So I enrolled into ZHAW in '14 and studied mechanical engineering because I used to be a constructer. Since then I didn't have much time for programming. Fortunately I realized one year and a bit later, that I wasn't content with what I was majoring in and decided that computer science was the way to go. However, I was a bit too late for switching right away to CS and therefore I didn't drop out immediately - instead I only attended courses I could transfer to my future cs studies: Analysis, numerics and such.
 
 And here I am, studying computer science. And I love it(not everything of course, but in general I do).
 
