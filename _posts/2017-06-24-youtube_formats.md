@@ -3,7 +3,7 @@ layout: post
 title: "ITags - Or: YouTube video formats"
 author: Raphael Emberger
 description: "What do itags really mean and what about all the other stuff?"
-tags: [youtube,itag]
+tags: [youtube,api,itag]
 ownstyles: [styleRed]
 ---
 

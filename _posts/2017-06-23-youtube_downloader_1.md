@@ -3,7 +3,7 @@ layout: post
 title: "Downloading YouTube videos"
 author: Raphael Emberger
 description: "Inner workings of YouTube revealed from the outside. Sort of..."
-tags: [youtube,download,c#,itag]
+tags: [youtube,api,download,c#,itag]
 ownstyles: [styleRed]
 ---
 
