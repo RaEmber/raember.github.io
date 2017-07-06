@@ -13,7 +13,7 @@ During studying the data YouTube sends to clients when programming my [YouTube d
 www.googleapis.com/youtube/v3/videos?id=DGilp8SwVXA&part=snippet,status,statistics&fields=items/id,items/snippet/title,items/snippet/channelId,items/status/privacyStatus,items/statistics/viewCount&key=AIzaSyA-dlBUjVQeuc4a6ZN4RkNUYDFddrVLxrA
 ```
 
-What catched my eye was this key variable in the url. Why? Because I know that requests to the official Api have to provide an Api key for authentication and regulation. But even though I'm pretty sure that I never requested one for *my Firefox client*, there's still an Api key somewhere in my system.
+What caught my eye was this key variable in the url. Why? Because I know that requests to the official Api have to provide an Api key for authentication and regulation. But even though I'm pretty sure that I never requested one for *my Firefox client*, there's still an Api key somewhere in my system.
 
 It turns out that there's an Api key stored in plain text in all the [`base.js` files](/2017/06/23/youtube_downloader_1/#base_js):
 
