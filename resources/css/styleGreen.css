@@ -76,7 +76,10 @@ p {
   margin-bottom: 1rem;
 }
 strong {
-  color: #beb4b4;
+  color: #efe5e5;
+}
+em {
+  color: #8c8282;
 }
 dl,
 ol,
@@ -106,6 +109,23 @@ abbr {
 abbr [title] {
   cursor: help;
   border-bottom: 1px dotted #e5e5e5;
+}
+input {
+  border: none;
+  color: #beb4b4;
+  background-color: #262424;
+  font-size: 20px;
+}
+input[valid="false"] {
+  background-color: #862424;
+}
+button {
+  border: none;
+  color: #beb4b4;
+  background-color: #302e2e;
+  font-size: 20px;
+  padding-top: 1px;
+  padding-bottom: 1px;
 }
 /*
  * Wrapper
@@ -137,7 +157,7 @@ abbr [title] {
   background-color: #262424;
   margin-top: 15px;
   margin-bottom: 15px;
-  height: 80px;
+  min-height: 80px;
 }
 .masthead-title {
   margin-top: 0;

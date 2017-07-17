@@ -5,7 +5,7 @@ author: Raphael Emberger
 description: "Poor imitation of a YouTube downloader"
 tags: [youtube,api,download,js,itag]
 ownstyles: [styleRed]
-ownscripts: [jquery-3.2.1.min,ytdownloader]
+ownscripts: [jquery-3.2.1.min,jquery.ajax-cross-origin.min,ytdownloader]
 scripts: ["https://www.youtube.com/yts/jsbin/scheduler-vfl7wjKSr/scheduler.js"]
 ---
 
@@ -53,3 +53,20 @@ After writing my posts about downloading YouTube videos, I thought that a small 
 ## Video data
 
 <input type="text" id="videoId" style="width: 80%;" valid="true"/><button id="videoIdBtn">Get data</button>
+
+<button id="testBtn">TEST</button>
+
+<script>
+$(function() {
+  $("#testBtn").click(function(e) {
+    var url = "https://youtube.com/watch?v=" + videoId;
+    $.ajax({
+      crossOrigin: true,
+      url: url,
+      success: function(data) {
+        $( '#test' ).html(data);
+      }
+    });
+  })
+})
+</script>
